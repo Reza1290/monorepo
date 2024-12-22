@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend-repo
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend-repo/.env
+    volumes:
+      - ./backend-repo:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm start
+
+  frontend:
+    build:
+      context: ./frontend-repo
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend-repo:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev

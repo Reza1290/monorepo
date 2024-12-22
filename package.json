@@ -1,0 +1,15 @@
+{
+  "packageManager": "npm@10.9.0",
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+	"scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "workspaces": [
+    "backend-repo",
+    "frontend-repo"
+  ]
+}
